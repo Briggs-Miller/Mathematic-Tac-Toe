@@ -1,0 +1,636 @@
+/* Normalize */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+}
+body {
+    margin: 0;
+}
+::-moz-selection {
+    background-color: hsla(0,0%,0%,.5);
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background-color: hsla(0,0%,0%,.5);
+    color: #fff;
+    text-shadow: none;
+}
+a:focus {
+    outline: thin dotted;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+strong {
+    font-weight: bold;
+}
+mark {
+    background: #ff6;
+    color: #444;
+}
+code,
+pre {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+pre {
+    white-space: pre;
+}
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: top;
+}
+#check_stats_button img{
+    border-radius: 50%;
+    background: black;
+}
+
+figure {
+    margin: 0;
+}
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+button,
+input {
+    line-height: normal;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+#topscoresoverlay div {
+    padding: 0px;
+}
+
+#topscoresoverlay table, 
+#topscoresoverlay th, 
+#topscoresoverlay td {
+    border: 1px solid black;
+}
+
+#topscoresoverlay table {
+    width: 300px;
+    margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    /* basic reset of heading styles, because we're doing our own margins and paddings */
+    margin: 0 0 0px 0;
+}
+
+h1 {
+    padding-bottom: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: white;
+    margin-bottom: 10px;
+
+}
+
+.header div:nth-child(1),
+.header div:nth-child(3) {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.header div:nth-child(2) {
+    flex-grow: 4;
+}
+
+#setup {
+    border: 2px solid #000;
+}
+
+#Players {
+    font-size: 18px;
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    padding-top: 0px;
+    font-size: 16px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: lightgrey;
+    padding-top: 0px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#overlay3 {
+    height: 460px;
+}
+
+#overlay4 {
+    height: 540px;
+}
+
+#overlay {
+    display: none;
+}
+
+#overlay div {
+    border: 2px solid #000;
+    padding-bottom: 20px;
+}
+
+#overlays div {
+    margin: auto;
+    padding: 5px;
+    padding-top: 0px;
+}
+
+.onetonine {
+    font-size: 30px;
+    font-weight: 700;
+    word-spacing: 4px;
+}
+
+#overlay p {
+    color: black;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+#overlays {
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.grow {
+    width: 300px;
+}
+
+#Commentary {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#Commentary .start {
+    align-self: flex-start;
+}
+
+table.center,
+#customise-settings div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (min-width: 800px) {
+    #container section {
+        margin: auto;
+    }
+    #Main {
+        position: relative;
+    }
+}
+
+@media (max-width: 850px) {
+    .hide_settings_while_inactive {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        display: none;
+    }
+    #container {
+        flex-direction: column;
+        min-height: 80%;
+    }
+    #container.height {
+        justify-content: space-around;
+        min-height: 90%;
+    }
+    #container section,
+    #overlays    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #Main div {
+        padding: 0px;
+    }
+    #overlays div {
+        padding: 0px;
+    }
+    
+    #overlay div {
+        padding-bottom: 10px;
+    }
+
+    #overlay1 div,
+    #overlay2 div,
+    #overlay3 div,
+    #overlay4 div,
+    #overlay5 div {
+        padding: 0px;
+        width: 290px;
+        
+    }
+
+
+
+    
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .header {
+        flex-direction: column;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .hide_banner_while_inactive {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        display: none;
+    }
+    .score {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        display: none;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+
+
+#Main,
+#score,
+#customise-settings {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2px;
+}
+
+#score div {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#numbersavailable {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+#numbersavailable div {
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+}
+
+#settings {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#Players {
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+#numbers_setting {
+    display: none;
+}
+
+.padding {
+    padding: 10px;
+}
+
+#customise_players {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+#customise_players div {
+    display: flex;
+    margin: auto;
+}
+
+
+#change_players input,
+#new_players input {
+    display: flex;
+    margin: auto;
+}
+
+#Main input,
+#change_players input,
+#new_players input,
+#overlay input {
+    font-size: 16px;
+}
+
+#customise_players option {
+    text-align: center;
+    text-align-last: center;
+}
+
+#settings {
+    padding: 10px;
+    display: inline-block;
+}
+
+#player_number_selector {
+    border-top: 2px solid #000;
+}
+
+.hide div {
+    display: none;
+}
+
+.used {
+    display: none;
+}
+
+.transparent {
+    visibility: hidden;
+}
+
+.throw {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    display:none;
+}
+
+.number.winning {
+    background: yellow;
+    opacity: 0.5;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#Commentary,
+#settings {
+    max-width: 300px;
+    justify-content: center;
+    text-align: center;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+#Main,
+#Commentary div {
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+h1 {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#row1 td,
+#row2 td{
+    border-bottom: 8px solid #000;
+}
+
+.vertical {
+    border-left: 8px solid #000;
+    border-right: 8px solid #000;
+}
+
+
+.container-box {
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 10px;
+}
+
+#Main .number {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    margin: 10px;
+    text-align: center;
+    padding: 0;
+}
+
+.container-box .settings-group label {
+    margin-right: 20px;
+    /* space the options out a bit */
+}
+
+
+/* both of these things are..kind of the same.. and these are the styles they share... */
+
+#question.container-box .number,
+#question.container-box .operator,
+#question.container-box input[type=button] {
+    float: left;
+    padding: 16px 22px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+table.table {
+    table-layout: fixed;
+    max-width: 100%;
+    width: 90%;
+}
+
+
+#question.container-box .number,
+#question.container-box input[type=button] {
+    border: 2px solid #000;
+}
+
+#question.container-box .number,
+#question.container-box .operator {
+    cursor: default;
+    /* stop it looking like text you can select the text */
+}
+
+#question.container-box input[type=button] {
+    margin-left: 22px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+.icon {
+    height: 50px;
+}
+
+#logo, #empty {
+    min-width: 100px;
+}
+
+.tutorial {
+    width: 80%;
+}
+
+#change_settings {
+    background-color: red;
+}
+}
+
+#buttons {
+    padding-bottom: 10px;
+}
+
+#status_update {
+    display: inline-block;
+}
+
+.left {
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.right {
+    float:right;
+    margin-right: 10px;
+}
+
+#columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 200px;
+    max-width: 300px;
+    border:2px solid black;
+    padding: 5px;
+}
+
+#Player1_column {
+    margin-right: 10px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    margin: 0px;
+    height: 100%;
+}
+
+#topscoresoverlay div {
+    padding: 0px;
+}

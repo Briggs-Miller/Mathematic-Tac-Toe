@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style_v1.css?cachebuster=2018-10-31">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <meta name="Description" content="MathemaTic-Tac-Toe by Think Square adds a mathematical twist that breathes new life into an old game while maintaining the simplicity that has made Tic-Tac-Toe so popular. Test your logic, and number skills against a friend or the AI at three different levels. No more boring drawn games!">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        <title>Mathematic-Tac-Toe</title>
+    </head>
+    <body>
+        <div id="banner" class="header">
+            <div id="logo"><a href="https://thinksquare.com.au/" target="_blank"><img class="banner  icon" src="thinksquare.png"></a></div>
+            <div><h1>MATHEMATIC-TAC-TOE</h1></div>
+            <div id="empty"></div>
+        </div>
+        <div id="container">
+            <section id="setup" class="grow">
+                <div id="settings">
+                    <label>
+                        <input type="button" id="help0" />
+                        <img class="tutorial" src="tutorial.png" alt="image of the word 'help'">
+                    </label>
+                </div>
+                <div id="Players">
+                    <label>
+                        <input type="radio" name="player_number" value="1" id="player_number1" checked />
+                        <img class="icon" src="1P.png" alt="a picture of a human and a computer">
+                    </label>
+                    <label>
+                        <input type="radio" name="player_number" value="2" id="player_number2" />
+                        <img class="icon" src="2P.png" alt="a picture of two humans">
+                    </label>
+                    <br/>
+                    <p id="P1_name" class="bold">Player 1 Name:  <input type="text" id="Player1" maxlength = "15" name="firstname"></p>
+                    <p id="P2_name" class="bold">Player 2 Name:  <input type="text" id="Player2" maxlength = "15" name="firstname"></p>
+                    <div id="AI_DIFFICULTY">
+                        <label>
+                            <input type="radio" name="AI_level" value="AI_EASY" id="AI_EASY" checked />
+                            <img class="icon" src="easy.png" alt="Picture of a star">
+                        </label>
+                        <label>
+                            <input type="radio" name="AI_level" value="AI_MED" id="AI_MED"/>
+                            <img class="icon" src="medium.png" alt="Picture of two stars">
+                        </label>
+                        <label>
+                            <input type="radio" name="AI_level" value="AI_HARD" id="AI_HARD"/>
+                            <img class="icon" src="hard.png" alt="Picture of three stars">
+                        </label>
+                    </div>
+                    <div id="new_players" class="padding"><input type="button" value="Start New Game" id="resetgame" /></div>
+                </div>
+
+            </section>
+            <section id="Main" class="hide_banner_while_inactive grow">
+                <div id="overlays">
+                    <div id="overlay">
+                        <div class="overlay_width">
+                            <p>Changing the settings will reset the current game and scoreboard.</p>
+                            <p>Your statistics will be saved </br>(if cookies are enabled)</p>
+                            <p>Are you sure you want to continue?</p>
+                            <input type="button" value="Yes, reset the game." id="confirm_change_settings" />
+                            <p></p>
+                            <input type="button" value="No, keep my current game." id="continue_game" />
+                        </div>
+                    </div>
+                    <div id="overlay1" class="grow throw overlay padding">
+
+                        <div>
+                            <p>In this game you will play as either the <b>ATTACKER</b> or <b>DEFENDER</b>.</p>
+                            <p>These will be chosen at random</p>
+                            <input type="button" class="left" value="Exit Tutorial" id="back0" />
+                            <input type="button" class="right" value="Next" id="help1" />
+                        </div>
+
+                    </div>
+                    <div id="overlay2" class="grow throw overlay">
+                        <div>
+                            <p>Players will take turns placing the numbers 1-9 into the grid.</p>
+                            <p class="onetonine">1  2  3  4  5  6  7  8  9</p>
+                            <p>Each number can only be used once.</p>
+                            <input type="button" class="left" value="Back" id="back1" />
+                            <input type="button" class="right" value="Next" id="help2" />
+                        </div>
+                    </div>
+                    <div id="overlay3" class="grow throw overlay">
+                        <div>
+                            <p>The aim for the <b>ATTACKER</b> is to get three numbers in a row to add to exactly 15.</p>
+                            <p>This can be done in any direction</p>
+                            <img src="tutorial3.png" alt="Picture of the game board with the numbers 1, 6 and 8 in the left column and the numbers 3, 4, 5 in other squares">
+                            <p>The <b>ATTACKER</b> has won the game in the example above"</p>
+                            <input type="button" class="left" value="Back" id="back2" />
+                            <input type="button" class="right" value="Next" id="help3" />
+                        </div>
+                    </div>
+                    <div id="overlay4" class="grow throw overlay">
+                        <div>
+                            <p>The aim for the <b>DEFENDER</b> is to stop the attacker from getting a total of 15.</p>
+                            <p>The <b>DEFENDER</b> wins once all the numbers ave been used and none of the rows, columns or diagonals add to exactly 15.</p>
+                            <img src="tutorial4.png" alt="Picture of the game board with 1, 6, 2 in the top row, 7, 3, 9 in the middle row and 8, 4, 5 in the bottom row.">
+                            <p>The <b>DEFENDER</b> has won the game in the example above"</p>
+                            <input type="button" class="left" value="Back" id="back3" />
+                            <input type="button" class="right" value="Next" id="help4" />
+                        </div>
+                    </div>
+                    <div id="overlay5" class="grow throw overlay">
+                        <div>
+                            <p>There are so many amazing strategies to discover.</p>
+                            <p>If you lived 1000 years and played this game every single day you still wouldn't have seen every possibility.</p>
+                            <h2>Good Luck!!</h2>
+                            <br/>
+                            <input type="button" class="left" value="Back" id="back4" />
+                            <input type="button" class="right" value="Finish Tutorial" id="help5" />
+                        </div>
+                    </div>
+                    <div id="topscoresoverlay" class="grow throw overlay">
+                        <div>
+                            <h2 id="stats_heading">Statistics</h2>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Wins</th>
+                                    <th>Games</th> 
+                                    <th>Winning %</th>
+                                </tr>
+                                <tr>
+                                    <td><b>Easy</b></td>
+                                    <td id="easy_wins">0</td>
+                                    <td id="easy_games">0</td>
+                                    <td id="easy_average">0%</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Medium</b></td>
+                                    <td id="medium_wins">0</td>
+                                    <td id="medium_games">0</td>
+                                    <td id="medium_average">0%</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Hard</b></td>
+                                    <td id="hard_wins">0</td>
+                                    <td id="hard_games">0</td>
+                                    <td id="hard_average">0%</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Total</b></td>
+                                    <td id="total_wins">0</td>
+                                    <td id="total_games">0</td>
+                                    <td id="total_average">0%</td>
+                                </tr>
+                            </table>
+                            
+                            <br/>
+                            <input type="button" class="left" value="Reset" id="resetstats" />
+                            <input type="button" class="right" value="Close" id="Close" />
+                            <br/>
+                            <br/>
+                            <p>This site uses cookies to store statistics under the name of Player 1.</p>
+                            <p>Please enable cookies to store your statistics.</p>
+                        </div>
+                    </div>
+                </div>
+                <section id="board" class="grow" >
+                    <div id="Commentary" class="grow">
+                        <div>
+                            <h3>Game Status:</h3>
+                        </div>
+                        <div id="status_update"></div>
+                    </div>
+                    <div>
+                        <table class="center table">
+                            <tr id="row1">
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_0" /></td>
+                                <td class="vertical"><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_1" /></td>
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_2" /></td>
+                            </tr>
+                            <tr id="row2">
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_3" /></td>
+                                <td class="vertical"><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_4" /></td>
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_5" /></td>
+                            </tr>
+                            <tr id="row3">
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_6" /></td>
+                                <td class="vertical"><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_7" /></td>
+                                <td><input type="number" class="number" value="" min="1" max="9" maxlength="1" id="grid_8" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="numbersavailable" >
+                        <div id = "used_1">1</div>
+                        <div id = "used_2">2</div>
+                        <div id = "used_3">3</div>
+                        <div id = "used_4">4</div>
+                        <div id = "used_5">5</div>
+                        <div id = "used_6">6</div>
+                        <div id = "used_7">7</div>
+                        <div id = "used_8">8</div>
+                        <div id = "used_9">9</div>
+                    </div>
+                    <div id="buttons" class="throw">
+                        <label id="change_settings_button">
+                            <input type="button" id="change_settings"/>
+                            <img class="icon" src="settings.png" alt="settings cog wheel">
+                        </label>
+                        <label id="check_stats_button">
+                            <input type="button" id="check_stats"/>
+                            <img class="icon" src="statsbar.png" alt="image of a graph">
+                        </label>
+                        <label id="reset_button">
+                            <input type="button" id="reset"/>
+                            <img class="icon" src="tick.png" alt="green tick">
+                        </label>
+                        <label id="submit_button">
+                            <input type="button" id="submit"/>
+                            <img class="icon" src="tick.png" alt="green tick">
+                        </label>
+                    </div>
+                </section>
+            </section>
+            <section id="scoreboard" class="grow hide_banner_while_inactive">
+                <div id="columns">
+                    <div id="Player1_column" class="column">
+                        <div id="P1_name_text" class="bold">Player 1</div>
+                        <div id="P2_name_text" class="bold">Player 2</div>
+                    </div>
+                    <div id="Player2_column" class="column">
+                        <div id="player1score"></div>
+                        <div id="player2score"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="main_v1.js?cachebuster=2018-11/2"></script>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+        ga('create', 'UA-77417419-1', 'auto');
+        ga('send', 'pageview');
+    
+        </script>
+
+    </body>
+</html>
